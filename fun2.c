@@ -2,7 +2,7 @@
 
 /****************** PRINT POINTER ******************/
 /**
- * print1_pointer - Prints the value of a pointer variable
+ * print_pointer - Prints the value of a pointer variable
  * @types: List a of arguments
  * @buffer: Buffer array to handle print
  * @flags: Calculates active flags
@@ -11,7 +11,7 @@
  * @size: Size specifier
  * Return: Number of chars printed.
  */
-int print1_pointer(va_list types, char buffer[],
+int print_pointer(va_list types, char buffer[],
 	int flags, int width, int precision, int size)
 {
 	char extra_c = 0, padd = ' ';
@@ -48,13 +48,13 @@ int print1_pointer(va_list types, char buffer[],
 	ind++;
 
 	/*return (write(1, &buffer[i], BUFF_SIZE - i - 1));*/
-	return (write1_pointer(buffer, ind, length,
+	return (write_pointer(buffer, ind, length,
 		width, flags, padd, extra_c, padd_start));
 }
 
 /************************* PRINT NON PRINTABLE *************************/
 /**
- * print1_non_printable - Prints ascii codes in hexa of non printable chars
+ * print_non_printable - Prints ascii codes in hexa of non printable chars
  * @types: Lista of arguments
  * @buffer: Buffer array to handle print
  * @flags: Calculates active flags
@@ -63,7 +63,7 @@ int print1_pointer(va_list types, char buffer[],
  * @size: Size specifier
  * Return: Number of chars printed
  */
-int print1_non_printable(va_list types, char buffer[],
+int print_non_printable(va_list types, char buffer[],
 	int flags, int width, int precision, int size)
 {
 	int i = 0, offset = 0;
@@ -104,7 +104,7 @@ int print1_non_printable(va_list types, char buffer[],
  * Return: Numbers of chars printed
  */
 
-int print1_reverse(va_list types, char buffer[],
+int print_reverse(va_list types, char buffer[],
 	int flags, int width, int precision, int size)
 {
 	char *str;
